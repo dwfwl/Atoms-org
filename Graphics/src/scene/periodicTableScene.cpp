@@ -14,14 +14,18 @@ void Scene::PeriodicTableScene::Update(SceneManager& manager)
 
 	for (int i = 0; i < 118; i++)
 	{
-		// if (inbound(xpos, ypos, m_PeriodicTable->m_ElementsUi[i]) && glfwGetMouseButton(m_Window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
+		if (inbound(xpos, ypos, m_PeriodicTable->m_ElementsUi[i]) && glfwGetMouseButton(m_Window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
 		{
-			// manager.SetScene(std::make_unique<ElementScene>(m_PeriodicTable->m_ElementsUi[i].m_Element));
+			manager.SetScene(std::make_unique<ElementScene>(m_PeriodicTable->m_ElementsUi[i].m_Element));
 		}
 	}
 }
 
 void Scene::PeriodicTableScene::Draw()
 {
-	// m_PeriodicTable->draw();
+	m_PeriodicTable->draw();
+	for (auto& element : m_PeriodicTable->m_ElementsUi)
+	{
+		element.draw();
+	}
 }

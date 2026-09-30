@@ -209,6 +209,7 @@
     </ClCompile>
     <ClCompile Include="src\scene\elementScene.cpp" />
     <ClCompile Include="src\scene\periodicTableScene.cpp" />
+    <ClCompile Include="src\scene\scene.cpp" />
     <ClCompile Include="src\scene\sceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>

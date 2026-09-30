@@ -169,7 +169,6 @@ namespace Renderer
         Geometry addOffset(float yOffset, Geometry& placeHolder);
 
         std::array<ElementUi, 118> m_ElementsUi;
-
     private:
         Shader* m_Shader;
     };

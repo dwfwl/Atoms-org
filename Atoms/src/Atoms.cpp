@@ -61,7 +61,7 @@ void Atoms::m_Render()
 	ImGui_ImplGlfw_InitForOpenGL(m_Window, true);
 	ImGui_ImplOpenGL3_Init("#version 330");
 
-	manager.SetScene(std::make_unique<Scene::PeriodicTableScene>(m_PeriodicTable.get(), m_Window));
+	scene.SetScene(std::make_unique<Scene::PeriodicTableScene>(m_PeriodicTable.get(), m_Window));
 
 	double ptime = glfwGetTime();
 
@@ -84,8 +84,14 @@ void Atoms::m_Render()
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
-		manager.Update();
-		manager.Draw();
+		scene.Update();
+		scene.Draw();
+
+		if (scene.currentScene->prevScene)
+		{
+			scene.SetScene(std::make_unique<Scene::PeriodicTableScene>(m_PeriodicTable.get(), m_Window));
+			scene.currentScene->prevScene = false;
+		}
 
 		ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());

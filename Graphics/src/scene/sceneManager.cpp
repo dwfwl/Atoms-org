@@ -18,5 +18,6 @@ void Scene::SceneManager::Update()
 
 void Scene::SceneManager::Draw()
 {
+	
 	if (currentScene) currentScene->Draw();
 }

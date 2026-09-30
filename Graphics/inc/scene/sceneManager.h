@@ -14,7 +14,6 @@ namespace Scene
 
 		void Draw();
 
-	private:
 		std::unique_ptr<Scene> currentScene;
 		std::unique_ptr<Scene> pendingScene;
 	};

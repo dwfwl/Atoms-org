@@ -10,10 +10,6 @@ void Scene::ElementScene::Update(SceneManager& manager)
 
 }
 
-void Scene::ElementScene::UpdateElement(int n, int l, int m)
-{
-	// element->CreateOrbital(n,l,m); ??
-}
 void Scene::ElementScene::Draw()
 {
 	ImVec2 size(200, 0);
@@ -33,20 +29,35 @@ void Scene::ElementScene::Draw()
 	ImGui::Text("Orbital Settings");
 
 	static int n = 0;
-	ImGui::Text("n: "); ImGui::SameLine();
-	ImGui::SliderInt("##1", &n, 0, 7);
+	ImGui::SliderInt("n", &n, 0, 7);
 	static int l = 0;
-	ImGui::Text("l: "); ImGui::SameLine();
-	ImGui::SliderInt("##2", &l, 0, 2);
+	ImGui::SliderInt("l", &l, 0, 2);
 	static int m = 0;
-	ImGui::Text("m: "); ImGui::SameLine();
-	ImGui::SliderInt("##3", &m, 0, 2);
+	ImGui::SliderInt("m", &m, 0, 2);
 
 	if (ImGui::Button("Update"))
 	{
-		UpdateElement(n, l, m);
+		// Simulation::Element::instance::UpdateElement(n, l, m);
 	}
 
 	ImGui::End();
-	// element->draw();
+
+	size = ImVec2(0, 0);
+
+	pos = ImVec2(
+		10,
+		10
+	);
+
+	ImGui::SetNextWindowPos(pos);
+	ImGui::SetNextWindowSize(size);
+
+	ImGui::Begin("###1", nullptr, Style::Get().flags);
+
+	if (ImGui::Button("Back"))
+	{
+		prevScene = true;
+	}
+
+	ImGui::End();
 }

@@ -89,6 +89,6 @@ private:
 	bool m_InitializeOpenGL();
 	void m_Render(/*Scene* scene*/);
 
-	Scene::SceneManager manager;
+	Scene::SceneManager scene;
 	// Scene* currentScene;
 };

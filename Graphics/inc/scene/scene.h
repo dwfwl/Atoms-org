@@ -11,6 +11,7 @@ namespace Scene
 
 		virtual void Update(SceneManager& manager) = 0;
 		virtual void Draw() = 0;
-	protected:
+	
+		static bool prevScene;
 	};
 }

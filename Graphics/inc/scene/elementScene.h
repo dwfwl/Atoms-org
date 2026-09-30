@@ -5,6 +5,8 @@
 #include "../Chemistry/chemistry.h"
 #include "../Graphics/inc/imgui/instance_imgui.h"
 
+#include "../Graphics/inc/rendering/element/element.h"
+
 namespace Scene
 {
 	class ElementScene : public Scene
@@ -13,10 +15,10 @@ namespace Scene
 		ElementScene(Chemistry::Element* e);
 
 		void Update(SceneManager& manager) override;
-		void UpdateElement(int n, int l, int m);
-
 		void Draw() override;
+
 	private:
 		Chemistry::Element* element;
+		Renderer::ElementUi elementUi;
 	};
 }

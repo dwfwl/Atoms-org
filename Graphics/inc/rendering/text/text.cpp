@@ -13,8 +13,7 @@ Renderer::Text::Text()
     {
         std::cout << "ERROR::FREETYPE: Could not init FreeType Library" << std::endl;
     }
-
-    if (FT_New_Face(ft, "fonts/gotham.ttf", 0, &face))
+    if (FT_New_Face(ft, "C:\\coding\\school\\Atoms\\Graphics\\fonts\\gotham.ttf", 0, &face))
     {
         std::cout << "ERROR::FREETYPE: Failed to load font" << std::endl;
     }
