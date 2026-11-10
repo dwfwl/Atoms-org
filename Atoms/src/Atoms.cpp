@@ -48,7 +48,12 @@ bool Atoms::m_InitializeOpenGL()
 
 	float aspectRatio = (float)m_Width / (float)m_Height;
 	glm::mat4 projection = glm::ortho(-aspectRatio, aspectRatio, -1.0f, 1.0f, -1.0f, 1.0f);
+	glm::mat4 view = glm::mat4(1.0f);
+	glm::mat4 model = glm::mat4(1.0f);
+
 	u_mat4f(m_Shader, "proj", projection);
+	u_mat4f(m_Shader, "view", view);
+	u_mat4f(m_Shader, "model", model);
 }
 
 void Atoms::m_Render()
@@ -64,6 +69,8 @@ void Atoms::m_Render()
 	scene.SetScene(std::make_unique<Scene::PeriodicTableScene>(m_PeriodicTable.get(), m_Window));
 
 	double ptime = glfwGetTime();
+	
+	glm::mat4 model = glm::mat4(1.0f);
 
 	while (!glfwWindowShouldClose(m_Window))
 	{
@@ -87,8 +94,29 @@ void Atoms::m_Render()
 		scene.Update();
 		scene.Draw();
 
-		if (scene.currentScene->prevScene)
+		if (scene.currentScene->updmatrices)
 		{
+			model = glm::translate(
+				model,
+				glm::vec3(0.0f, 0.0f, 0.0f)
+			);
+
+			model = glm::scale(
+				model,
+				glm::vec3(2.0f)
+			);
+
+			u_mat4f(m_Shader, "model", model);
+
+			scene.currentScene->updmatrices = false;
+		}
+		else if(scene.currentScene->prevScene)
+		{
+			model = glm::mat4(1.0f);
+			u_mat4f(m_Shader, "model", model);
+
+			scene.currentScene->updmatrices = false;
+
 			scene.SetScene(std::make_unique<Scene::PeriodicTableScene>(m_PeriodicTable.get(), m_Window));
 			scene.currentScene->prevScene = false;
 		}

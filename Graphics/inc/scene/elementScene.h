@@ -7,6 +7,7 @@
 
 #include "../Graphics/inc/rendering/element/element.h"
 
+
 namespace Scene
 {
 	class ElementScene : public Scene
@@ -20,5 +21,6 @@ namespace Scene
 	private:
 		Chemistry::Element* element;
 		Renderer::ElementUi elementUi;
+		// std::unique_ptr<Simulation::ElementSimulation> elementSim;
 	};
 }

@@ -5,9 +5,11 @@ layout(location = 1) in vec3 col;
 out vec4 vertexColor;
 
 uniform mat4 proj;
+uniform mat4 view;
+uniform mat4 model;
 
 void main()
 {
-	gl_Position = proj * vec4(pos, 1.0f);
+	gl_Position = proj * view * model * vec4(pos, 1.0f);
 	vertexColor = vec4(col, 1.0f);
 }

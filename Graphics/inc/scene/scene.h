@@ -13,5 +13,6 @@ namespace Scene
 		virtual void Draw() = 0;
 	
 		static bool prevScene;
+		static bool updmatrices;
 	};
 }

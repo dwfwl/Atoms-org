@@ -21,9 +21,9 @@ namespace Renderer
             {
                 std::vector<Vertex>{
                     Vertex{glm::vec3(-1.66827f, 0.95f, 0.0f), glm::vec3(1.0f)},
-                    Vertex{glm::vec3(-1.66827f, 0.78f ,  0.0f), glm::vec3(1.0f)},
+                    Vertex{glm::vec3(-1.66827f, 0.78f ,  0.0f), glm::vec3(0.0f)},
                     Vertex{glm::vec3(-1.49827f, 0.78f,  0.0f), glm::vec3(1.0f)},
-                    Vertex{glm::vec3(-1.49827f, 0.95f, 0.0f), glm::vec3(1.0f)}
+                    Vertex{glm::vec3(-1.49827f, 0.95f, 0.0f), glm::vec3(0.0f)}
                 }, std::vector<uint32_t>
                 {
                     0, 1,
@@ -36,9 +36,9 @@ namespace Renderer
             {
                 std::vector<Vertex>{
                     Vertex{glm::vec3(-1.66827f, 0.77, 0.0f), glm::vec3(1.0f)},
-                    Vertex{glm::vec3(-1.66827f, 0.6, 0.0f), glm::vec3(1.0f)},
+                    Vertex{glm::vec3(-1.66827f, 0.6, 0.0f), glm::vec3(0.0f)},
                     Vertex{glm::vec3(-1.49827f, 0.6, 0.0f), glm::vec3(1.0f)},
-                    Vertex{glm::vec3(-1.49827f, 0.77, 0.0f), glm::vec3(1.0f)}
+                    Vertex{glm::vec3(-1.49827f, 0.77, 0.0f), glm::vec3(0.0f)}
                 }, std::vector<uint32_t>
                 {
                     0, 1,
@@ -51,9 +51,9 @@ namespace Renderer
             {
                 std::vector<Vertex>{
                     Vertex{glm::vec3(-1.66827f, 0.59f, 0.0f), glm::vec3(1.0f)},
-                    Vertex{glm::vec3(-1.66827f, 0.42f, 0.0f), glm::vec3(1.0f)},
+                    Vertex{glm::vec3(-1.66827f, 0.42f, 0.0f), glm::vec3(0.0f)},
                     Vertex{glm::vec3(-1.49827f, 0.42f, 0.0f), glm::vec3(1.0f)},
-                    Vertex{glm::vec3(-1.49827f, 0.59f, 0.0f), glm::vec3(1.0f)}
+                    Vertex{glm::vec3(-1.49827f, 0.59f, 0.0f), glm::vec3(0.0f)}
                 }, std::vector<uint32_t>
                 {
                     0, 1,

@@ -3,17 +3,27 @@
 Scene::ElementScene::ElementScene(Chemistry::Element* e)
 {
 	element = e;
+	// elementSim = std::make_unique<Simulation::ElementSimulation>(element);
 }
 
 void Scene::ElementScene::Update(SceneManager& manager)
 {
-
+	
 }
 
 void Scene::ElementScene::Draw()
 {
-	ImVec2 size(200, 0);
+	// elementSim->draw();
+	ImVec2 size(1800, 980);
 
+	ImGui::SetNextWindowSize(size);
+	ImGui::SetNextWindowPos(ImVec2(550, 200));
+	ImGui::Begin("N/A", nullptr, Style::Get().flags);
+	ImGui::SetWindowFontScale(30.0f);
+	ImGui::Text("N/A");
+	ImGui::End();
+
+	size = ImVec2(200, 0);
 	ImGuiViewport* viewport = ImGui::GetMainViewport();
 
 	ImVec2 pos(

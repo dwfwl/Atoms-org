@@ -16,6 +16,7 @@ void Scene::PeriodicTableScene::Update(SceneManager& manager)
 	{
 		if (inbound(xpos, ypos, m_PeriodicTable->m_ElementsUi[i]) && glfwGetMouseButton(m_Window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
 		{
+			this->updmatrices = true;
 			manager.SetScene(std::make_unique<ElementScene>(m_PeriodicTable->m_ElementsUi[i].m_Element));
 		}
 	}

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -72,11 +72,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)ext;$(SolutionDir)Chemistry\inc;$(ProjectDir)inc;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)ext;$(SolutionDir)Graphics\inc;$(SolutionDir)Chemistry\inc;$(ProjectDir)inc;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Atoms\ext;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(SolutionDir)ext;$(SolutionDir)Chemistry\inc;$(ProjectDir)inc;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)ext;$(SolutionDir)Graphics\inc;$(SolutionDir)Chemistry\inc;$(ProjectDir)inc;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Atoms\ext;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -131,20 +131,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="inc\electron\probability.h" />
-    <ClInclude Include="inc\element.h" />
-    <ClInclude Include="inc\nucleus\neutron.h" />
-    <ClInclude Include="inc\nucleus\proton.h" />
-    <ClInclude Include="inc\particle\particle.h" />
-    <ClInclude Include="simulation.h" />
-    <ClInclude Include="src\element.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\electron\probability.cpp" />
-    <ClCompile Include="src\nucleus\nucleus.cpp" />
-    <ClCompile Include="src\particle\particle.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
